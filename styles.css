@@ -25,7 +25,7 @@
 }
 .header > h1 {
     font-size: 4rem;
-    font-weight: 200;
+    font-weight: 300;
     font-style: thin;
 }
 
@@ -36,8 +36,8 @@
     color: #1f2937;
     flex: 1;
     width: 100%;
-    /* flex: 1;    allow main section to grow and take up all available space */
 }
+
 .main-content {
     text-align: center;
     padding: 10px;
@@ -46,7 +46,6 @@
 #addBookBtn {
     font-size: 1.5rem;
     font-weight: 200;
-    justify-content: center;
     text-align: center;
     border: none;
     background-color: #d1d5db;;
@@ -58,20 +57,12 @@
 
 }
 
-.overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.75);
-}
-
 .modal {
-    /* display: grid;
-    grid-template-columns: 25%; */
     padding: 0.5rem;
     background-color: white;
     border-radius: 0.25rem;
     justify-content: center;
+    /* positioning of the modal */
     top: 50%;
     left: 50%;
     translate: -50% -50%;
@@ -79,7 +70,7 @@
 }
 .add-book-form > h4 {
     font-size: 1.5rem;
-    font-weight: 200;
+    font-weight: 300;
     margin-bottom: 20px;
     justify-content: center;
     text-align: center;
@@ -91,11 +82,34 @@
 }
 .input {
     margin: 8px 0;
+    border: 1px solid black;
 }
-#closeBtn {
+
+.checkbox-div {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    /* justify-items: space-between; */
+}
+#hasRead {
+    margin: 5px;
+}
+
+.formButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+#submitBtn {
     text-align: center;
     border-radius: 0.25rem;
-    margin: 8px 0;
+    width: 100px;
+}
+#cancelBtn {
+    text-align: center;
+    border-radius: 0.25rem;
+    width: 100px;
 }
 
 /* --- --- Footer --- --- */
@@ -103,7 +117,7 @@
     color: #1f2937;
     padding: 1rem;
     font-size: 1rem;
-    font-weight: 100;
+    font-weight: 200;
     font-style: thin;
     text-align: center;
     justify-content: center;

@@ -5,13 +5,13 @@
 */
 const openButton = document.getElementById("addBookBtn");
 const theModal = document.getElementById("addBookModal")
-const closeButton = document.getElementById("closeBtn");
+const cancelButton = document.getElementById("cancelBtn");
 
 openButton.addEventListener("click", () => {
     theModal.showModal();
 })
 
-closeButton.addEventListener("click", () => {
+cancelButton.addEventListener("click", () => {
     theModal.close();
 })
 
