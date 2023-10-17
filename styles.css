@@ -20,7 +20,7 @@
 
 /* --- --- Header --- --- */
 .header {
-    margin: 20px;
+    margin: .5rem 4rem;
     color: #1f2937;
 }
 .header > h1 {
@@ -42,15 +42,61 @@
     text-align: center;
     padding: 10px;
 }
-#add-book-btn {
+
+#addBookBtn {
     font-size: 1.5rem;
     font-weight: 200;
+    justify-content: center;
+    text-align: center;
     border: none;
     background-color: #d1d5db;;
     color: #1f2937;
     margin: 2rem;
 }
 
+.book-grid {
+
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.modal {
+    /* display: grid;
+    grid-template-columns: 25%; */
+    padding: 0.5rem;
+    background-color: white;
+    border-radius: 0.25rem;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: 1;
+}
+.add-book-form > h4 {
+    font-size: 1.5rem;
+    font-weight: 200;
+    margin-bottom: 20px;
+    justify-content: center;
+    text-align: center;
+}
+.add-book-form {
+    display: flex;
+    flex-direction: column;
+    margin: 60px;
+}
+.input {
+    margin: 8px 0;
+}
+#closeBtn {
+    text-align: center;
+    border-radius: 0.25rem;
+    margin: 8px 0;
+}
 
 /* --- --- Footer --- --- */
 .footer {

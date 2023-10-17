@@ -17,13 +17,26 @@
         </div> <!-- end header-->
         <div class="main">
             <div class="main-content">
-                <button class="btn" id="add-book-btn">+ Add Book To Library</button>
-                <div>TBD</div>
+                <button class="btn" id="addBookBtn">+ Add Book To Library</button>
+                <div class="book-grid">TBD</div>
             </div>
         </div> <!-- end main-->
         <div class="footer">
             <span>Copyright <strong>&copy;</strong> by Carlos A. Valdez</span>
         </div> <!-- end footer-->
+
+        <!-- for form details / dialog/modal when add-book-btn is pushed -->
+        <dialog class="modal" id="addBookModal">
+            <form class="add-book-form" id="addBookForm">
+                <h4>New Book To Add</h4>
+                <input class="input" type="text" id="title" placeholder="Book Title" maxlength="50" required>
+                <input class="input" type="text" id="author" placeholder="Author" maxlength="50" required>
+                <input class="input" type="number" id="pages" placeholder="Pages" maxlength="9999" required>
+                <button id="closeBtn">Close</button>
+            </form>
+        </dialog>
+
+
     </div> <!-- end container-->
     <!-- Script for Javascript file-->
     <script src="library.js"></script>
