@@ -1,0 +1,64 @@
+/* styles.css by Carlos A. Valdez */
+
+:root {
+    --container-width: 1600px;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+/* --- --- Header --- --- */
+.header {
+    margin: 20px;
+    color: #1f2937;
+}
+.header > h1 {
+    font-size: 4rem;
+    font-weight: 200;
+    font-style: thin;
+}
+
+
+/* --- --- Main --- --- */
+.main {
+    background-color: #d1d5db;
+    color: #1f2937;
+    flex: 1;
+    width: 100%;
+    /* flex: 1;    allow main section to grow and take up all available space */
+}
+.main-content {
+    text-align: center;
+    padding: 10px;
+}
+#add-book-btn {
+    font-size: 1.5rem;
+    font-weight: 200;
+    border: none;
+    background-color: #d1d5db;;
+    color: #1f2937;
+    margin: 2rem;
+}
+
+
+/* --- --- Footer --- --- */
+.footer {
+    color: #1f2937;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 100;
+    font-style: thin;
+    text-align: center;
+    justify-content: center;
+}
