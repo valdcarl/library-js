@@ -49,23 +49,7 @@ addBookFromForm.addEventListener("submit", (event) => {
        That’s because the submit input tries to send the data to a server 
        by default.
     */
-     event.preventDefault();
+    event.preventDefault();
     addBookToLibrary();
+    theModal.close();
 });
-
-// addBook.addEventListener("submit", () => {
-//     this.preventDefault(); // prevent the default form submission behavior
-
-//     const title = document.getElementById("title").value;
-//     const author = document.getElementById("author").value;
-//     const pages = parseInt(document.getElementById("title").value);
-//     const hasRead = document.getElementById("title").checked;
-
-//     const newBook = new Book(title, author, pages, hasRead);
-
-//     addBookToLibrary(newBook);      // add the book to theLibrary
-
-//     console.log(myLibrary);
-
-//     theModal.close();       // close the modal
-// });
