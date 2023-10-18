@@ -14,6 +14,18 @@ function Book(title, author, pages, hasRead) {
     this.hasRead = hasRead;
 }
 
+function renderBook() {
+    let libraryElement = document.querySelector("#book-grid");
+    libraryElement.innerHTML = "";      // reset from start, to avoid duplication of the myLibrary loop
+    for (let i = 0; i < myLibrary.length; i++) {
+        // console.log(myLibrary[i]);  // use to test if each Book appearing on console
+        let book = myLibrary[i];    // individual book in myLibrary
+        let bookElement = document.createElement('div');
+        bookElement.innerHTML = `<p>${book.title}</p>`
+        libraryElement.appendChild(bookElement);
+    }
+}
+
 function addBookToLibrary() {
     /** 
      * - Adds a Book object to the myLibrary array */
@@ -24,7 +36,9 @@ function addBookToLibrary() {
 
     const newBook = new Book(title, author, pages, hasRead);
     myLibrary.push(newBook);
+    renderBook();
 }
+
 
 // DOM Manipulation section
 const theModal = document.querySelector("#addBookModal");
@@ -35,11 +49,14 @@ const addBookFromForm = document.querySelector("#addBookForm");
 addBookButton.addEventListener("click", () => {
     // when the button is clicked, I want the form to appear, we are using a dialog as a modal
     // const theModal = document.querySelector("#addBookModal");
+    addBookFromForm.reset();
     theModal.showModal();       // to show the modal
 });
 
-cancelBookEntryButton.addEventListener("click", () => {
+cancelBookEntryButton.addEventListener("click", (event) => {
     // if the user selects to cancel, I want the form to dissapear, and no changes to be made
+    event.preventDefault();
+    addBookFromForm.reset();
     theModal.close();           // to close the modal
 });
 
@@ -49,23 +66,12 @@ addBookFromForm.addEventListener("submit", (event) => {
        That’s because the submit input tries to send the data to a server 
        by default.
     */
-     event.preventDefault();
+    event.preventDefault();
     addBookToLibrary();
+    theModal.close();
 });
 
-// addBook.addEventListener("submit", () => {
-//     this.preventDefault(); // prevent the default form submission behavior
-
-//     const title = document.getElementById("title").value;
-//     const author = document.getElementById("author").value;
-//     const pages = parseInt(document.getElementById("title").value);
-//     const hasRead = document.getElementById("title").checked;
-
-//     const newBook = new Book(title, author, pages, hasRead);
-
-//     addBookToLibrary(newBook);      // add the book to theLibrary
-
-//     console.log(myLibrary);
-
-//     theModal.close();       // close the modal
-// });
+/* 
+    Ultimately the goal is to make these objects show up, to do this we need
+    to render the received inputs
+*/
