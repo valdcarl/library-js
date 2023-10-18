@@ -28,20 +28,18 @@
         <!-- for form details / dialog/modal when add-book-btn is pushed -->
         <dialog class="modal" id="addBookModal">
             <form class="add-book-form" id="addBookForm">
-
                 <h4>New Book To Add</h4>
-                <input class="input" type="text" id="title" name="title" placeholder="Book Title" maxlength="50" required>
-                <input class="input" type="text" id="author" name="author" placeholder="Author" maxlength="50" required>
-                <input class="input" type="number" id="pages" name="pages" placeholder="Pages" maxlength="9999" required>
+                <input class="input" type="text" id="title" name="title" placeholder="Book Title" maxlength="50" >  <!-- debating on making these fields required-->
+                <input class="input" type="text" id="author" name="author" placeholder="Author" maxlength="50" >
+                <input class="input" type="number" id="pages" name="pages" placeholder="Pages" maxlength="9999" >
                 <div class="checkbox-div">
                     <label for="hasRead">Have you read this book?</label>
                     <input type="checkbox" id="hasRead" name="hasRead"> 
                 </div>
                 <div class="formButtons">
-                    <button id="submitBtn">Submit</button>
+                    <button id="submitBtn" type="submit">Add Book</button>
                     <button id="cancelBtn">Cancel</button>
                 </div>
-
             </form>
         </dialog>
 
