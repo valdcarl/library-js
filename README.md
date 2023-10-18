@@ -6,7 +6,7 @@
 <p>This is because I feel that frameworks come and go, constantly rotating in popularity, but fundamentals always persist </p>
 
 
-Images of this project below:
+-Images of this project below:
 ![library-js-img1](https://github.com/valdcarl/library-js/assets/77943334/8002252c-289a-48de-bc92-b8f86a5e51a2)
 - Presenting how the project looks upon landing
 ![library-js-img2](https://github.com/valdcarl/library-js/assets/77943334/cb6e785d-c119-4fd7-a52e-306fa00a603a)
