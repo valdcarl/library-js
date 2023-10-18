@@ -53,8 +53,27 @@
     margin: 2rem;
 }
 
-.book-grid {
+.the-book-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: .5rem 4rem;
+    /* border: 1px solid #1f2937; */
+}
 
+.book-card {
+    border: 2px solid #1f2937;
+    background-color: transparent;
+    gap: 20px;
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
 }
 
 .modal {

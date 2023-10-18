@@ -17,14 +17,42 @@ function Book(title, author, pages, hasRead) {
 function renderBook() {
     let libraryElement = document.querySelector("#book-grid");
     libraryElement.innerHTML = "";      // reset from start, to avoid duplication of the myLibrary loop
+
     for (let i = 0; i < myLibrary.length; i++) {
         // console.log(myLibrary[i]);  // use to test if each Book appearing on console
         let book = myLibrary[i];    // individual book in myLibrary
-        let bookElement = document.createElement('div');
-        bookElement.innerHTML = `<p>${book.title}</p>`
-        libraryElement.appendChild(bookElement);
+        /* 
+            need to add a clas for styling, and create other elements, display them in the classList
+        */
+        let bookCard = document.createElement('div');
+        bookCard.classList.add('book-card'); // here I am adding the styling
+        
+        let titleElement = document.createElement('p');
+        titleElement.textContent = `Title: ${book.title}`;
+        bookCard.appendChild(titleElement);
+
+        let authorElement = document.createElement('p');
+        authorElement.textContent = `Author: ${book.author}`
+        bookCard.appendChild(authorElement);
+
+        let pagesElement = document.createElement('p');
+        pagesElement.textContent = `Pages: ${book.pages}`;
+        bookCard.appendChild(pagesElement);
+
+        let hasReadElement = document.createElement('p');
+        hasReadElement.textContent = `Read: ${book.hasRead ? 'Yes' : 'No'}`;
+        bookCard.appendChild(hasReadElement);
+
+        libraryElement.appendChild(bookCard);
     }
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    if (myLibrary.length === 0) {
+        let bookCard = document.querySelector('.book-card');
+        bookCard.style.border = 'none';
+    }
+});
 
 function addBookToLibrary() {
     /** 
@@ -32,7 +60,7 @@ function addBookToLibrary() {
     const title = document.querySelector("#title").value;
     const author = document.querySelector("#author").value;
     const pages = parseInt(document.querySelector("#pages").value);
-    const hasRead = document.querySelector("#hasRead").value;
+    const hasRead = document.querySelector("#hasRead").checked;
 
     const newBook = new Book(title, author, pages, hasRead);
     myLibrary.push(newBook);
